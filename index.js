@@ -15,7 +15,6 @@ mongoose.connect(keys.MONGODB_SRV, {
 });
 
 const app = express();
-const PORT = process.env.PORT || 5000;
 
 app.use(
   cookieSession({
@@ -28,6 +27,7 @@ app.use(passport.session());
 
 authRouters(app);
 
+const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
   console.log("Emaily Server listening on port " + PORT);
 });
